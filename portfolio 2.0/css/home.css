@@ -1,0 +1,1212 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif; /* Fonte Oswald */
+}
+
+body {
+    background: #0a1e3b; /* Azul escuro mais rico */
+    color: #ffffff;
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Habilita rolagem suave em toda a página */
+}
+
+/* Cabeçalho */
+header {
+    background: #0a2a5c; /* Azul escuro vibrante */
+    color: #fff;
+    padding: 20px 20%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10%;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 50px;
+    height: auto;
+    margin-right: 15px;
+}
+
+header ul {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    list-style: none; /* remove as bolinhas */
+    padding: 0;       /* remove padding padrão */
+    margin: 0;        /* remove margem padrão */
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-contato {
+    padding: 8px 15px;
+    background: #ffffff;
+    color: #0a2a5c; /* Cor do texto alinhada com o header */
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-contato:hover {
+    background: #0a2a5c; /* Mesma cor do header */
+    color: #fff;
+}
+
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    background: transparent; /* Remove o fundo branco */
+    color: #fff;
+}
+
+.lang-btn .flag {
+    width: 20px;
+    height: 14px;
+}
+
+/* Menu de idiomas */
+.lang-menu {
+    display: none; /* Inicialmente escondido */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: none;
+    border-radius: 4px;
+    min-width: 120px;
+    z-index: 1001; /* Certifica-se de estar acima de outros elementos */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.lang-menu.active {
+    display: block; /* Mostra o menu quando ativo */
+}
+
+/* Botões dentro do menu */
+.lang-menu .lang-btn {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 6px 12px;
+    border: none;
+    background: none;
+    color: #0a2a5c;
+}
+
+.lang-menu .lang-btn:hover {
+    background-color: #f0f0f0;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+header ul li a:hover {
+    color: #4b8cff; /* Azul claro para destaque */
+}
+
+/* Seções */
+section {
+    padding: 60px 10%;
+    text-align: center; /* Centraliza texto por padrão */
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fdfeff;
+    text-align: center;
+}
+
+/* Sobre */
+#sobre {
+    text-align: center; /* Garante que todo o conteúdo esteja centralizado */
+}
+
+#sobre h3 {
+    font-size: 1.2rem;
+    text-align: center;
+    align-content: center;
+}
+
+.btn-container {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center; /* Centraliza os botões */
+    flex-wrap: wrap;
+}
+
+/* Projetos */
+#projetos {
+    text-align: center; /* Centraliza o título e o contêiner */
+}
+
+.projetos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center; /* Centraliza os cards */
+}
+
+/* Jornada */
+#jornada {
+    padding: 60px 10%;
+    background: #14274a; /* Azul escuro sutilmente mais claro */
+}
+
+.jornada-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: center; /* Centraliza o conteúdo */
+}
+
+.jornada-texto {
+    flex: 2;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.jornada-cards {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #0a1e3b; /* Cor do texto alinhada com o fundo do body */
+}
+
+.jornada-cards .card-experiencia,
+.jornada-cards .card-trabalho {
+    background: #f8fafc; /* Off-white mais limpo */
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.jornada-cards .card-experiencia:hover,
+.jornada-cards .card-trabalho:hover {
+    transform: translateY(-5px);
+}
+
+.card-trabalho h3,
+.card-experiencia h3 {
+    color: #1a4b8c; /* Azul vibrante para títulos */
+    font-size: 2rem;
+}
+
+/* Stack (Habilidades e Tecnologias) */
+#stack {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    text-align: center;
+    padding: 60px 10%;
+}
+
+#stack .col h3 {
+    text-align: center; /* Centraliza os títulos */
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+/* Container de habilidades e tecnologias */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Cards de habilidades e tecnologias */
+.skill-card {
+    background: #0a2a5c;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: 1px solid #000000; /* Borda preta adicionada */
+    position: relative; /* Para posicionamento do pop-up */
+    cursor: pointer;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.skill-card i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Estilos específicos para tecnologias */
+.tech-card i.devicon-nextjs-original.colored { color: #00d1b2; }
+.tech-card i.devicon-nodejs-plain.colored { color: #68a063; }
+.tech-card i.devicon-fastapi-plain.colored { color: #009688; }
+.tech-card i.devicon-vuejs-plain.colored { color: #42b983; }
+.tech-card i.devicon-postgresql-plain.colored { color: #336791; }
+.tech-card i.devicon-docker-plain.colored { color: #0db7ed; }
+.tech-card i.devicon-express-original.colored { color: #fff; }
+.tech-card i.devicon-tailwindcss-plain.colored { color: #06b6d4; }
+.tech-card i.devicon-framermotion-original.colored { color: #ff007a; }
+.tech-card i.devicon-mongodb-plain.colored { color: #47a248; }
+.tech-card i.devicon-redis-plain.colored { color: #dc382d; }
+.tech-card i.devicon-git-plain.colored { color: #f1502f; }
+.tech-card i.fab.fa-github { color: #fff; }
+.tech-card i.fab.fa-linux { color: #fcc624; }
+.tech-card i.devicon-javascript-plain.colored { color: #f7df1e; }
+.tech-card i.devicon-html5-plain.colored { color: #e34c26; }
+.tech-card i.devicon-css3-plain.colored { color: #264de4; }
+.tech-card i.devicon-mysql-plain.colored { color: #00758f; }
+.tech-card i.devicon-java-plain.colored { color: #b07219; }
+.tech-card i.fab.fa-figma { color: #f24e1e; }
+
+/* Estilos específicos para soft skills */
+.soft-skill i.fas.fa-users { color: #6b7280; }
+.soft-skill i.fas.fa-comments { color: #9ca3af; }
+.soft-skill i.fas.fa-sync-alt { color: #3b82f6; }
+.soft-skill i.fas.fa-lightbulb { color: #f59e0b; }
+.soft-skill i.fas.fa-calendar-check { color: #10b981; }
+.soft-skill i.fas.fa-tasks { color: #ef4444; }
+
+/* Mini Pop-up */
+.skill-popup {
+    display: none;
+    position: absolute;
+    top: -120px; /* Aumentado para dar mais espaço acima */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #14274a;
+    padding: 20px; /* Aumentado o padding para mais espaço interno */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    color: #fff;
+    font-size: 1rem; /* Aumentado para melhor legibilidade */
+    line-height: 1.5;
+    min-width: 300px; /* Aumentado o tamanho mínimo */
+    max-width: 350px; /* Limite máximo para não ficar muito largo */
+    z-index: 1000;
+    text-align: left; /* Texto fluindo normalmente (horizontal) */
+    white-space: normal; /* Permite quebras de linha naturais */
+}
+
+.skill-card:hover .skill-popup {
+    display: block; /* Mostra o pop-up no hover (opcional) */
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    #stack {
+        grid-template-columns: 1fr;
+    }
+    #stack .col h3 {
+        text-align: center;
+    }
+    .skill-popup {
+        min-width: 250px;
+        max-width: 300px;
+        top: -110px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #1a4b8c; /* Azul vibrante */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #123a6e; /* Azul mais escuro para hover */
+}
+
+/* Contato */
+#contato ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+#contato ul li {
+    margin: 10px 0;
+}
+
+#contato ul li a {
+    color: #4b8cff; /* Azul claro para links */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#contato ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #0a2a5c; /* Mesma cor do header */
+    color: #fff;
+    margin-top: 40px;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif; /* Fonte Oswald */
+}
+
+body {
+    background: #0a1e3b; /* Azul escuro mais rico */
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background: #0a2a5c; /* Azul escuro vibrante */
+    color: #fff;
+    padding: 20px 20%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10%;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 50px;
+    height: auto;
+    margin-right: 15px;
+}
+
+header ul {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-contato {
+    padding: 8px 15px;
+    background: #ffffff;
+    color: #0a2a5c;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-contato:hover {
+    background: #0a2a5c;
+    color: #fff;
+}
+
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    background: transparent;
+    color: #fff;
+}
+
+.lang-btn .flag {
+    width: 20px;
+    height: 14px;
+}
+
+/* Menu de idiomas */
+.lang-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: none;
+    border-radius: 4px;
+    min-width: 120px;
+    z-index: 1001;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.lang-menu.active {
+    display: block;
+}
+
+/* Botões dentro do menu */
+.lang-menu .lang-btn {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 6px 12px;
+    border: none;
+    background: none;
+    color: #0a2a5c;
+}
+
+.lang-menu .lang-btn:hover {
+    background-color: #f0f0f0;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+header ul li a:hover {
+    color: #4b8cff;
+}
+
+/* Seções */
+section {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fdfeff;
+    text-align: center;
+}
+
+/* Sobre */
+#sobre {
+    text-align: center;
+}
+
+#sobre h3 {
+    font-size: 1.2rem;
+    text-align: center;
+    align-content: center;
+}
+
+.btn-container {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Projetos */
+#projetos {
+    padding: 40px 10%;
+}
+
+.projetos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.projeto-card {
+    background: #0a2a5c;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.projeto-card:hover {
+    transform: translateY(-10px);
+}
+
+.projeto-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.projeto-card h3 {
+    font-size: 1.5rem;
+    color: #4b8cff;
+    margin-bottom: 10px;
+}
+
+.projeto-card p {
+    font-size: 1rem;
+    color: #d1d5db;
+    margin-bottom: 15px;
+}
+
+.projeto-card .btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #1a4b8c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.projeto-card .btn:hover {
+    background: #123a6e;
+}
+
+/* Jornada */
+#jornada {
+    padding: 60px 10%;
+    background: #14274a;
+}
+
+.jornada-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.jornada-texto {
+    flex: 2;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.jornada-cards {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #0a1e3b;
+}
+
+.jornada-cards .card-experiencia,
+.jornada-cards .card-trabalho {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.jornada-cards .card-experiencia:hover,
+.jornada-cards .card-trabalho:hover {
+    transform: translateY(-5px);
+}
+
+.card-trabalho h3,
+.card-experiencia h3 {
+    color: #1a4b8c;
+    font-size: 2rem;
+}
+
+/* Stack (Habilidades e Tecnologias) */
+#stack {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    text-align: center;
+    padding: 60px 10%;
+}
+
+#stack .col h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+/* Container de habilidades e tecnologias */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Cards de habilidades e tecnologias */
+.skill-card {
+    background: #0a2a5c;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: 1px solid #000000;
+    position: relative;
+    cursor: pointer;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.skill-card i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Estilos específicos para tecnologias */
+.tech-card i.devicon-nextjs-original.colored { color: #00d1b2; }
+.tech-card i.devicon-nodejs-plain.colored { color: #68a063; }
+.tech-card i.devicon-fastapi-plain.colored { color: #009688; }
+.tech-card i.devicon-vuejs-plain.colored { color: #42b983; }
+.tech-card i.devicon-postgresql-plain.colored { color: #336791; }
+.tech-card i.devicon-docker-plain.colored { color: #0db7ed; }
+.tech-card i.devicon-express-original.colored { color: #fff; }
+.tech-card i.devicon-tailwindcss-plain.colored { color: #06b6d4; }
+.tech-card i.devicon-framermotion-original.colored { color: #ff007a; }
+.tech-card i.devicon-mongodb-plain.colored { color: #47a248; }
+.tech-card i.devicon-redis-plain.colored { color: #dc382d; }
+.tech-card i.devicon-git-plain.colored { color: #f1502f; }
+.tech-card i.fab.fa-github { color: #fff; }
+.tech-card i.fab.fa-linux { color: #fcc624; }
+.tech-card i.devicon-javascript-plain.colored { color: #f7df1e; }
+.tech-card i.devicon-html5-plain.colored { color: #e34c26; }
+.tech-card i.devicon-css3-plain.colored { color: #264de4; }
+.tech-card i.devicon-mysql-plain.colored { color: #00758f; }
+.tech-card i.devicon-java-plain.colored { color: #b07219; }
+.tech-card i.fab.fa-figma { color: #f24e1e; }
+
+/* Estilos específicos para soft skills */
+.soft-skill i.fas.fa-users { color: #6b7280; }
+.soft-skill i.fas.fa-comments { color: #9ca3af; }
+.soft-skill i.fas.fa-sync-alt { color: #3b82f6; }
+.soft-skill i.fas.fa-lightbulb { color: #f59e0b; }
+.soft-skill i.fas.fa-calendar-check { color: #10b981; }
+.soft-skill i.fas.fa-tasks { color: #ef4444; }
+
+/* Mini Pop-up */
+.skill-popup {
+    display: none;
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #14274a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.5;
+    min-width: 300px;
+    max-width: 350px;
+    z-index: 1000;
+    text-align: left;
+    white-space: normal;
+}
+
+.skill-card:hover .skill-popup {
+    display: block;
+}
+
+/* Contato */
+#contato {
+    padding: 60px 10%;
+    background: #0a2a5c;
+}
+
+#contato ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+#contato ul li {
+    margin: 10px 0;
+}
+
+#contato ul li a {
+    color: #4b8cff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#contato ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #0a2a5c;
+    color: #fff;
+    margin-top: 40px;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    header {
+        padding: 15px 5%;
+    }
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    header ul {
+        margin-top: 10px;
+        gap: 10px;
+    }
+    .header-right {
+        margin-top: 10px;
+    }
+    #stack {
+        grid-template-columns: 1fr;
+    }
+    #stack .col h3 {
+        text-align: center;
+    }
+    .projetos-container {
+        grid-template-columns: 1fr;
+    }
+    .projeto-card img {
+        height: 150px;
+    }
+    .skill-popup {
+        min-width: 250px;
+        max-width: 300px;
+        top: -110px;
+        font-size: 0.9rem;
+    }
+}
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif; /* Fonte Oswald */
+}
+
+body {
+    background: #0a1e3b; /* Azul escuro mais rico */
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background: #0a2a5c; /* Azul escuro vibrante */
+    color: #fff;
+    padding: 20px 20%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10%;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 50px;
+    height: auto;
+    margin-right: 15px;
+}
+
+header ul {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-contato {
+    padding: 8px 15px;
+    background: #ffffff;
+    color: #0a2a5c;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-contato:hover {
+    background: #0a2a5c;
+    color: #fff;
+}
+
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    background: transparent;
+    color: #fff;
+}
+
+.lang-btn .flag {
+    width: 20px;
+    height: 14px;
+}
+
+/* Menu de idiomas */
+.lang-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: none;
+    border-radius: 4px;
+    min-width: 120px;
+    z-index: 1001;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.lang-menu.active {
+    display: block;
+}
+
+/* Botões dentro do menu */
+.lang-menu .lang-btn {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 6px 12px;
+    border: none;
+    background: none;
+    color: #0a2a5c;
+}
+
+.lang-menu .lang-btn:hover {
+    background-color: #f0f0f0;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+header ul li a:hover {
+    color: #4b8cff;
+}
+
+/* Seções */
+section {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fdfeff;
+    text-align: center;
+}
+
+/* Sobre */
+#sobre {
+    text-align: center;
+}
+
+#sobre h3 {
+    font-size: 1.2rem;
+    text-align: center;
+    align-content: center;
+}
+
+.btn-container {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Projetos */
+#projetos {
+    padding: 40px 10%;
+}
+
+.projetos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.projeto-card {
+    background: #0a2a5c;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.projeto-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 700;
+}
+.projeto-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.projeto-card h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.projeto-card p {
+    font-size: 1rem;
+    color: #d1d5db;
+    margin-bottom: 15px;
+}
+
+.projeto-card a {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #1a4b8c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.projeto-card a:hover {
+    background: #123a6e;
+}
+
+/* Jornada */
+#jornada {
+    padding: 60px 10%;
+    background: #14274a;
+}
+
+.jornada-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.jornada-texto {
+    flex: 2;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.jornada-cards {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #0a1e3b;
+}
+
+.jornada-cards .card-experiencia,
+.jornada-cards .card-trabalho {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.jornada-cards .card-experiencia:hover,
+.jornada-cards .card-trabalho:hover {
+    transform: translateY(-5px);
+}
+
+.card-trabalho h3,
+.card-experiencia h3 {
+    color: #1a4b8c;
+    font-size: 2rem;
+}
+
+/* Stack (Habilidades e Tecnologias) */
+#stack {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    text-align: center;
+    padding: 60px 10%;
+}
+
+#stack .col h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+/* Container de habilidades e tecnologias */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Cards de habilidades e tecnologias */
+.skill-card {
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: 1px solid #000000;
+    position: relative;
+    cursor: pointer;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.skill-card i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Estilos específicos para tecnologias */
+.tech-card i.devicon-nextjs-original.colored { color: #00d1b2; }
+.tech-card i.devicon-nodejs-plain.colored { color: #68a063; }
+.tech-card i.devicon-fastapi-plain.colored { color: #009688; }
+.tech-card i.devicon-vuejs-plain.colored { color: #42b983; }
+.tech-card i.devicon-postgresql-plain.colored { color: #336791; }
+.tech-card i.devicon-docker-plain.colored { color: #0db7ed; }
+.tech-card i.devicon-express-original.colored { color: #fff; }
+.tech-card i.devicon-tailwindcss-plain.colored { color: #06b6d4; }
+.tech-card i.devicon-framermotion-original.colored { color: #ff007a; }
+.tech-card i.devicon-mongodb-plain.colored { color: #47a248; }
+.tech-card i.devicon-redis-plain.colored { color: #dc382d; }
+.tech-card i.devicon-git-plain.colored { color: #f1502f; }
+.tech-card i.fab.fa-github { color: #fff; }
+.tech-card i.fab.fa-linux { color: #fcc624; }

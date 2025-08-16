@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Diego</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cantora+One&family=Luckiest+Guy&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <!-- Logo no canto esquerdo -->
+      <div class="logo">
+        <h3>DW</h3>
+      </div>
+      <ul>
+        <li><a href="#sobre" data-i18n="menu_about">Sobre</a></li>
+        <li><a href="#habilidades" data-i18n="menu_skills">Habilidades</a></li>
+        <li><a href="#projetos" data-i18n="menu_projects">Projetos</a></li>
+      </ul>
+
+      <!-- Área direita -->
+      <div class="header-right">
+        <div class="lang-dropdown">
+          <button class="lang-btn active" title="Idioma Atual">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="PT" class="flag">
+          </button>
+          <div class="lang-menu">
+            <button class="lang-btn" data-lang="pt" title="Português">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="PT" class="flag"> Brazil
+            </button>
+            <button class="lang-btn" data-lang="en" title="English">
+              <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="EN" class="flag"> English
+            </button>
+          </div>
+        </div>
+
+        <!-- Botão Entre em Contato -->
+        <a href="#contato" class="btn-contato" data-i18n="contact">Entre em Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Seção Sobre -->
+  <section id="sobre" style="text-align: center;">
+    <img src="images/picofme (1).png" alt="Foto de Diego Ewerton" class="profile-photo" style="width:150px; height:auto;">
+    <h2 data-i18n="about_title"><span class="name-highlight">Olá, eu sou Diego Ewerton</span></h2>
+    <p data-i18n="about_text">Sou desenvolvedor Front End.</p>
+    <h3 data-i18n="about_subtext">
+      Apaixonado pela criação de soluções inovadoras,<br> 
+      com 1 ano de experiência especializado em tecnologias modernas e sistemas personalizados.
+    </h3>
+
+    <!-- Botões -->
+    <div class="btn-container" style="justify-content: center;">
+      <a href="#projetos" class="btn scroll-link" data-i18n="btn_work">Ver meu Trabalho</a>
+      <a href="https://www.linkedin.com/in/diego-ewerton-2063272a0" target="_blank" class="btn">
+        <i class="fab fa-linkedin"></i> 
+      </a>
+      <a href="https://github.com/Yeerh" target="_blank" class="btn">
+        <i class="fab fa-github"></i> 
+      </a>
+    </div>
+  </section>
+
+  <section id="jornada">
+    <h2 data-i18n="journey_title">Minha Jornada</h2>
+    <div class="jornada-container">
+      <!-- Lado Esquerdo -->
+      <div class="jornada-texto">
+        <p data-i18n="journey_text1">
+          Sou um desenvolvedor Front End com 1 ano de experiência,<br> apaixonado por criar soluções inovadoras e eficientes. 
+          Minha jornada começou com o desejo de transformar ideias em realidade através da programação. Ao longo do tempo, desenvolvi habilidades sólidas em HTML, CSS e JavaScript, além de frameworks modernos como React e Vue.js.
+        </p>
+        <p data-i18n="journey_text2">
+          Estou sempre em busca de aprender novas tecnologias e aprimorar minhas habilidades para entregar soluções completas e profissionais.
+        </p>
+      </div>
+
+      <!-- Lado Direito -->
+      <div class="jornada-cards">
+        <div class="card-experiencia">
+          <h3 data-i18n="experience_years">1+ Ano</h3>
+          <p data-i18n="experience_text">De experiência em Front-End e Back-End</p>
+        </div>
+        <div class="card-trabalho">
+          <h3 data-i18n="job_place">🌐 Prefeitura de Paulista</h3>
+          <p data-i18n="job_text">Atuei no desenvolvimento de sistemas modernos e acessíveis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+<br>
+<h2>Habilidades & Tecnologias</h2>
+<section id="stack" aria-label="Tecnologias e Habilidades" style="text-align: center;">
+  <div class="col">
+    <h3 data-i18n="stack_tech_title">Tecnologias</h3>
+    <div class="skills-container">
+      <div class="skill-card tech-card">
+        <i class="devicon-nodejs-plain colored"></i>
+        <span>Node.js</span>
+      </div>
+      <div class="skill-card tech-card">
+        <i class="devicon-docker-plain colored"></i>
+        <span>Docker</span>
+      </div>
+      <div class="skill-card tech-card">
+        <i class="devicon-express-original colored"></i>
+        <span>Express.js</span>
+      </div>
+      <div class="skill-card tech-card">
+        <i class="devicon-git-plain colored"></i>
+        <span>Git</span>
+      </div>
+      <div class="skill-card tech-card">
+        <i class="fab fa-github"></i>
+        <span>GitHub Actions</span>
+      </div>
+      <div class="skill-card tech-card">
+        <i class="fab fa-linux"></i>
+        <span>Linux</span>
+      </div>
+      <div class="skill-card tech-card">
+        <i class="devicon-javascript-plain colored"></i>
+        <span>JavaScript</span>
+      </div>
+      <div class="skill-card tech-card">
+        <i class="devicon-html5-plain colored"></i>
+        <span>HTML</span>
+      </div>
+      <div class="skill-card tech-card">
+        <i class="devicon-css3-plain colored"></i>
+        <span>CSS</span>
+      </div>
+      <div class="skill-card tech-card">
+        <i class="devicon-mysql-plain colored"></i>
+        <span>MySQL</span>
+      </div>
+      <div class="skill-card tech-card">
+        <i class="devicon-java-plain colored"></i>
+        <span>Java</span>
+      </div>
+      <div class="skill-card tech-card">
+        <i class="fab fa-figma"></i>
+        <span>Figma</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <h3 data-i18n="stack_skills_title">Habilidades</h3>
+    <div class="skills-container">
+      <div class="skill-card soft-skill">
+        <i class="fas fa-users"></i>
+        <span>Teamwork</span>
+      </div>
+      <div class="skill-card soft-skill">
+        <i class="fas fa-comments"></i>
+        <span>Communication</span>
+      </div>
+      <div class="skill-card soft-skill">
+        <i class="fas fa-sync-alt"></i>
+        <span>Adaptação</span>
+      </div>
+      <div class="skill-card soft-skill">
+        <i class="fas fa-lightbulb"></i>
+        <span>Creativity</span>
+      </div>
+      <div class="skill-card soft-skill">
+        <i class="fas fa-calendar-check"></i>
+        <span>Planning</span>
+      </div>
+      <div class="skill-card soft-skill">
+        <i class="fas fa-tasks"></i>
+        <span>Project Management</span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Seção para exibir informações -->
+  <!-- Seção Projetos -->
+  <h2 data-i18n="menu_projects">Projetos</h2>
+  <section id="projetos" style="text-align: center;">
+    <div class="projetos-container" style="justify-content: center;">
+      <div class="projeto-card">
+        <img src="images/image.png" alt="Projeto 1 - Meu Primeiro Portfólio">
+        <h3>Portfolio</h3>
+        <p>Primeiro Portfolio desenvolvido
+          usando linguagens como HTML, CSS e JavaScript, com foco em acessibilidade e responsividade.</p>
+        </p>
+        <a href="#projetos" class="btn scroll-link" target="_blank">Ver mais</a>
+      </div>
+      <div class="projeto-card">
+        <img src="images/reca.png" alt="Projeto 2 - Meu Segundo Portfólio">
+        <h3>Sistema de Recadastramento Prefeitura</h3>
+        <p>Projeto focado em Solução para organização e ajudar secretarias
+          busando a facilidade de uso.</p><br>
+        <a href="#projetos" class="btn scroll-link">Ver mais</a>
+      </div>
+    </div>
+  </section>
+  <script src="js/home.js" defer></script>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 - Criado por Diego Ewerton</p>
+  </footer>
+</body>
+</html>
