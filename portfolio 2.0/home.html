@@ -7,45 +7,42 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cantora+One&family=Luckiest+Guy&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <!-- Logo no canto esquerdo -->
-      <div class="logo">
-        <h3>DW</h3>
-      </div>
-      <ul>
-        <li><a href="#sobre" data-i18n="menu_about">Sobre</a></li>
-        <li><a href="#habilidades" data-i18n="menu_skills">Habilidades</a></li>
-        <li><a href="#projetos" data-i18n="menu_projects">Projetos</a></li>
-      </ul>
-
-      <!-- Área direita -->
-      <div class="header-right">
-        <div class="lang-dropdown">
-          <button class="lang-btn active" title="Idioma Atual">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="PT" class="flag">
-          </button>
-          <div class="lang-menu">
-            <button class="lang-btn" data-lang="pt" title="Português">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="PT" class="flag"> Brazil
-            </button>
-            <button class="lang-btn" data-lang="en" title="English">
-              <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="EN" class="flag"> English
-            </button>
-          </div>
-        </div>
-
-        <!-- Botão Entre em Contato -->
-        <a href="#contato" class="btn-contato" data-i18n="contact">Entre em Contato</a>
-      </div>
-    </nav>
-  </header>
-
+    <header>
+        <nav>
+            <!-- Logo no canto esquerdo -->
+            <div class="logo">
+                <h3>DW</h3>
+            </div>
+            <ul>
+                <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#stack" class="nav-link">Habilidades</a></li>
+                <li><a href="#projetos" class="nav-link">Projetos</a></li>
+            </ul>
+            <!-- Área direita -->
+            <div class="header-right">
+                <div class="lang-dropdown">
+                    <button class="lang-btn active" title="Idioma Atual">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="PT" class="flag">
+                    </button>
+                    <div class="lang-menu">
+                        <button class="lang-btn" data-lang="pt" title="Português">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="PT" class="flag"> Brazil
+                        </button>
+                        <button class="lang-btn" data-lang="en" title="English">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="EN" class="flag"> English
+                        </button>
+                    </div>
+                </div>
+                <!-- Botão Entre em Contato -->
+                <a href="#contato" class="btn-contato">Entre em Contato</a>
+            </div>
+        </nav>
+    </header>
   <!-- Seção Sobre -->
   <section id="sobre" style="text-align: center;">
     <img src="images/picofme (1).png" alt="Foto de Diego Ewerton" class="profile-photo" style="width:150px; height:auto;">
@@ -151,7 +148,7 @@
       </div>
     </div>
   </div>
-
+<br>
   <div class="col">
     <h3 data-i18n="stack_skills_title">Habilidades</h3>
     <div class="skills-container">
@@ -182,6 +179,58 @@
     </div>
   </div>
 </section>
+<h2>Nível de Habilidade</h2>
+<section id="skills-animadas" style="text-align: center;">
+  <div class="skills-animadas-container">
+    <div class="skill-animada">
+      <span>HTML</span>
+      <div class="skill-bar">
+        <div class="skill-bar-fill" data-width="90%"></div>
+      </div>
+    </div>
+    <div class="skill-animada">
+      <span>CSS</span>
+      <div class="skill-bar">
+        <div class="skill-bar-fill" data-width="85%"></div>
+      </div>
+    </div>
+    <div class="skill-animada">
+      <span>JavaScript</span>
+      <div class="skill-bar">
+        <div class="skill-bar-fill" data-width="80%"></div>
+      </div>
+    </div>
+    <div class="skill-animada">
+      <span>React</span>
+      <div class="skill-bar">
+        <div class="skill-bar-fill" data-width="75%"></div>
+      </div>
+    </div>
+    <div class="skill-animada">
+      <span>Node.js</span>
+      <div class="skill-bar">
+        <div class="skill-bar-fill" data-width="70%"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<h2>Certificados</h2>
+<section id="certificados" style="text-align: center;">
+  <div class="certificados-container">
+    <div class="certificado-card">
+      <img src="images/certificado1.png" alt="Certificado 1">
+      <h3>Curso de Java</h3>
+      <p>Emitido por Udemy - 2024</p>
+    </div>
+    <div class="certificado-card">
+      <img src="images/certificado2.png" alt="Certificado 2">
+      <h3>Curso de HTML E CSS</h3>
+      <p>Emitido por Udemy</p>
+    </div>
+    </div>
+  </div>
+</section>
+
 <!-- Seção para exibir informações -->
   <!-- Seção Projetos -->
   <h2 data-i18n="menu_projects">Projetos</h2>
@@ -193,19 +242,18 @@
         <p>Primeiro Portfolio desenvolvido
           usando linguagens como HTML, CSS e JavaScript, com foco em acessibilidade e responsividade.</p>
         </p>
-        <a href="#projetos" class="btn scroll-link" target="_blank">Ver mais</a>
+        <a href="https://unrivaled-melomakarona-80b55c.netlify.app/" class="btn scroll-link" target="_blank">Ver mais</a>
       </div>
       <div class="projeto-card">
         <img src="images/reca.png" alt="Projeto 2 - Meu Segundo Portfólio">
         <h3>Sistema de Recadastramento Prefeitura</h3>
         <p>Projeto focado em Solução para organização e ajudar secretarias
-          busando a facilidade de uso.</p><br>
+          buscando a facilidade de uso.</p><br>
         <a href="#projetos" class="btn scroll-link">Ver mais</a>
       </div>
     </div>
   </section>
   <script src="js/home.js" defer></script>
-
   <!-- Rodapé -->
   <footer>
     <p>&copy; 2025 - Criado por Diego Ewerton</p>

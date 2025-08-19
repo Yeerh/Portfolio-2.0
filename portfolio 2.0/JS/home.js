@@ -1,3 +1,7 @@
+
+// =========================
+// Traduções do site
+// =========================
 const translations = {
     pt: {
         menu_about: "Sobre",
@@ -48,140 +52,228 @@ const translations = {
         "[project_desc]project2": "Brief description of Project 2, focused on design and functionality."
     }
 };
-
-// Dados de informações para tecnologias e habilidades
+// =========================
+// Informações das Skills
+// =========================
 const skillInfo = {
     pt: {
-        "Node.js": "Node.js é uma plataforma de desenvolvimento que permite criar aplicações server-side com JavaScript. É amplamente utilizado para APIs e aplicações em tempo real.",
-        "Docker": "Docker é uma plataforma que permite criar, gerenciar e implantar aplicativos em contêineres, garantindo consistência entre ambientes.",
-        "Express.js": "Express.js é um framework para Node.js que simplifica o desenvolvimento de aplicações web e APIs com roteamento e middleware.",
-        "Git": "Git é um sistema de controle de versão distribuído, essencial para gerenciar mudanças em códigos e colaborar em equipes.",
-        "GitHub Actions": "GitHub Actions é uma ferramenta de CI/CD para automatizar fluxos de trabalho diretamente no GitHub.",
-        "Linux": "Linux é um sistema operacional de código aberto, amplamente usado em servidores e desenvolvimento.",
-        "JavaScript": "JavaScript é uma linguagem de programação que adiciona interatividade a páginas web, sendo essencial para o desenvolvimento front-end e back-end.",
-        "HTML": "HTML (HyperText Markup Language) é a estrutura básica das páginas web, definindo conteúdo e layout.",
-        "CSS": "CSS (Cascading Style Sheets) é usado para estilizar e formatar o conteúdo de páginas web.",
-        "MySQL": "MySQL é um sistema de gerenciamento de banco de dados relacional, popular para aplicações web.",
-        "Java": "Java é uma linguagem de programação orientada a objetos, usada em aplicações corporativas e sistemas robustos.",
-        "Figma": "Figma é uma ferramenta de design colaborativo baseada na web, usada para criar interfaces de usuário.",
-        "Teamwork": "Capacidade de trabalhar em equipe, colaborando de forma eficaz com outros membros.",
-        "Communication": "Habilidade de se comunicar claramente e transmitir ideias de maneira eficiente.",
-        "Adaptação": "Capacidade de se ajustar a novas situações ou mudanças no ambiente de trabalho.",
-        "Creativity": "Habilidade de criar soluções inovadoras e pensar fora da caixa.",
-        "Planning": "Capacidade de organizar e planejar tarefas para alcançar objetivos de forma eficiente.",
-        "Project Management": "Habilidade de gerenciar projetos, incluindo prazos, recursos e entregas."
+        HTML: "HTML é a estrutura básica da web.",
+        CSS: "CSS define estilos e layouts.",
+        JavaScript: "JavaScript traz interatividade.",
+        "React JS": "Biblioteca para interfaces web.",
+        "Node.js": "Ambiente para backend.",
+        Adaptação: "Capacidade de aprender e se adaptar."
     },
     en: {
-        "Node.js": "Node.js is a development platform that allows creating server-side applications with JavaScript. It is widely used for APIs and real-time applications.",
-        "Docker": "Docker is a platform that enables creating, managing, and deploying applications in containers, ensuring consistency across environments.",
-        "Express.js": "Express.js is a framework for Node.js that simplifies web application and API development with routing and middleware.",
-        "Git": "Git is a distributed version control system, essential for managing code changes and collaborating in teams.",
-        "GitHub Actions": "GitHub Actions is a CI/CD tool for automating workflows directly on GitHub.",
-        "Linux": "Linux is an open-source operating system, widely used in servers and development.",
-        "JavaScript": "JavaScript is a programming language that adds interactivity to web pages, essential for front-end and back-end development.",
-        "HTML": "HTML (HyperText Markup Language) is the basic structure of web pages, defining content and layout.",
-        "CSS": "CSS (Cascading Style Sheets) is used to style and format web page content.",
-        "MySQL": "MySQL is a relational database management system, popular for web applications.",
-        "Java": "Java is an object-oriented programming language, used in enterprise applications and robust systems.",
-        "Figma": "Figma is a web-based collaborative design tool, used for creating user interfaces.",
-        "Teamwork": "Ability to work effectively in a team, collaborating with other members.",
-        "Communication": "Skill to communicate clearly and convey ideas efficiently.",
-        "Adaptação": "Ability to adapt to new situations or changes in the work environment.",
-        "Creativity": "Ability to create innovative solutions and think outside the box.",
-        "Planning": "Ability to organize and plan tasks to achieve goals efficiently.",
-        "Project Management": "Skill to manage projects, including deadlines, resources, and deliveries."
+        HTML: "HTML is the basic structure of the web.",
+        CSS: "CSS defines styles and layouts.",
+        JavaScript: "JavaScript adds interactivity.",
+        "React JS": "Library for web interfaces.",
+        "Node.js": "Environment for backend.",
+        Adaptation: "Ability to learn and adapt."
     }
 };
 
-// Função para atualizar o conteúdo com base no idioma selecionado
+// =========================
+// Idioma atual
+// =========================
+let currentLang = "pt";
+
+// =========================
+// Atualiza os textos do site
+// =========================
 function updateContent(lang) {
-    document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        element.innerHTML = translations[lang][key] || element.innerHTML;
+    currentLang = lang;
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
+        }
     });
 }
 
-// Toggle dropdown menu ao clicar na área do dropdown
-document.querySelector('.lang-dropdown').addEventListener('click', (e) => {
-    const langMenu = document.querySelector('.lang-menu');
-    if (!e.target.classList.contains('flag')) {
-        langMenu.classList.toggle('active');
-    }
-});
+// =========================
+// Troca de idioma
+// =========================
+const langButtons = document.querySelectorAll(".lang-menu .lang-btn");
+const mainLangBtn = document.querySelector(".lang-dropdown > .lang-btn");
 
-// Handle language selection
-document.querySelectorAll('.lang-menu .lang-btn').forEach(button => {
-    button.addEventListener('click', () => {
-        const lang = button.getAttribute('data-lang');
+langButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const lang = btn.getAttribute("data-lang");
+
+        // Atualiza classe active
+        langButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        // Atualiza a bandeira principal
+        if (lang === "pt") {
+            mainLangBtn.querySelector("img").src = "https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg";
+        } else if (lang === "en") {
+            mainLangBtn.querySelector("img").src = "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg";
+        }
+
+        // Atualiza conteúdos do site
         updateContent(lang);
-        const activeLangBtn = document.querySelector('.lang-btn.active');
-        activeLangBtn.innerHTML = button.innerHTML; // Atualiza a bandeira e texto ativo
-        document.querySelector('.lang-menu').classList.remove('active'); // Close dropdown
     });
 });
 
-// Handle skill/technology click with pop-up
-document.querySelectorAll('.skill-card').forEach(card => {
-    card.addEventListener('click', () => {
-        const skillName = card.querySelector('span').textContent;
-        const lang = document.querySelector('.lang-btn.active img').alt === 'PT' ? 'pt' : 'en';
-        const description = skillInfo[lang][skillName] || "Nenhuma informação disponível para esta tecnologia ou habilidade.";
+// =========================
+// Popup de Skills
+// =========================
+document.querySelectorAll(".skill-card").forEach(card => {
+    card.addEventListener("click", () => {
+        const skillName = card.querySelector("span").textContent;
+        const description =
+            skillInfo[currentLang][skillName] ||
+            skillInfo[currentLang]["Adaptação"] || 
+            skillInfo[currentLang]["Adaptation"] ||
+            "No info available.";
 
-        // Remove pop-up existente, se houver
-        const existingPopup = document.querySelector('.skill-popup');
-        if (existingPopup) existingPopup.remove();
+        // Remove popup antigo
+        const oldPopup = document.querySelector(".skill-popup");
+        if (oldPopup) oldPopup.remove();
 
-        // Cria o pop-up
-        const popup = document.createElement('div');
-        popup.className = 'skill-popup';
+        // Cria popup
+        const popup = document.createElement("div");
+        popup.className = "skill-popup";
         popup.innerHTML = `<strong>${skillName}</strong><br>${description}`;
-        card.appendChild(popup);
+        document.body.appendChild(popup);
 
-        // Posiciona o pop-up acima do card
-        const cardRect = card.getBoundingClientRect();
-        popup.style.top = `-${cardRect.height + 20}px`;
-        popup.style.left = '50%';
-        popup.style.transform = 'translateX(-50%)';
+        // Posiciona popup
+        const rect = card.getBoundingClientRect();
+        popup.style.position = "absolute";
+        popup.style.top = `${rect.top + window.scrollY - popup.offsetHeight - 10}px`;
+        popup.style.left = `${rect.left + window.scrollX + rect.width / 2}px`;
+        popup.style.transform = "translateX(-50%)";
 
-        // Fecha o pop-up ao clicar fora
-        const closePopup = (e) => {
-            if (!card.contains(e.target)) {
-                popup.remove();
-                document.removeEventListener('click', closePopup);
-            }
-        };
-        setTimeout(() => document.addEventListener('click', closePopup), 0);
+        // Fecha ao clicar fora
+        document.addEventListener(
+            "click",
+            e => {
+                if (!popup.contains(e.target) && !card.contains(e.target)) {
+                    popup.remove();
+                }
+            },
+            { once: true }
+        );
     });
 });
 
-// Handle flag click to show info
-document.querySelector('.lang-btn.active .flag').addEventListener('click', () => {
-    const lang = document.querySelector('.lang-btn.active img').alt === 'PT' ? 'pt' : 'en';
-    updateContent(lang);
+// =========================
+// Scroll suave nos links do nav
+// =========================
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute("href"));
+        if (target) {
+            window.scrollTo({
+                top: target.offsetTop,
+                behavior: "smooth"
+            });
+        }
+    });
 });
 
-// Close dropdown if clicking outside
-document.addEventListener('click', (e) => {
-    const langDropdown = document.querySelector('.lang-dropdown');
-    if (!langDropdown.contains(e.target)) {
-        document.querySelector('.lang-menu').classList.remove('active');
-    }
-});
+// =========================
+// Animações ao rolar a página
+// =========================
+function checkVisibility() {
+    const elements = document.querySelectorAll("section, .skill-card, .projeto-card");
+    const windowHeight = window.innerHeight;
 
-// Initialize with Portuguese
-updateContent('pt');
-// Função para animação de rolagem suave
-document.querySelectorAll('.scroll-link').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault(); // Impede o comportamento padrão do link
-    const targetId = this.getAttribute('href'); // Obtém o ID do alvo
-    const targetElement = document.querySelector(targetId);
+    elements.forEach(el => {
+        const position = el.getBoundingClientRect().top;
+        if (position < windowHeight - 100) {
+            el.classList.add("visible");
+        }
+    });
+}
 
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth', // Animação suave
-        block: 'start' // Alinha o topo do elemento com o topo da janela
-      });
-    }
-  });
+window.addEventListener("scroll", checkVisibility);
+window.addEventListener("load", checkVisibility);
+
+// IntersectionObserver para cards e seções
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('section, .skill-card, .projeto-card').forEach(el => observer.observe(el));
+
+const jornadaCards = document.querySelectorAll('.jornada-cards .card-experiencia, .jornada-cards .card-trabalho');
+const cardObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('show-card');
+    });
+}, { threshold: 0.2 });
+jornadaCards.forEach(card => cardObserver.observe(card));
+
+// =========================
+// Skills animadas
+// =========================
+const skillFills = document.querySelectorAll(".skill-bar-fill");
+function animateSkills() {
+    const triggerPoint = window.innerHeight * 0.85;
+    skillFills.forEach(fill => {
+        const sectionTop = fill.getBoundingClientRect().top;
+        if (sectionTop < triggerPoint) {
+            fill.style.width = fill.getAttribute("data-width");
+        }
+    });
+}
+window.addEventListener("scroll", animateSkills);
+window.addEventListener("load", animateSkills);
+
+// =========================
+// Botão voltar ao topo
+// =========================
+const backToTop = document.getElementById('backToTop');
+if (backToTop) {
+    window.addEventListener('scroll', () => {
+        backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    backToTop.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+}
+// Função para verificar visibilidade e aplicar animação
+function checkVisibility() {
+    const elements = document.querySelectorAll('#skills-animadas, .skill-animada, .projeto-card, .skill-card, .card-experiencia, .card-trabalho');
+    const windowHeight = window.innerHeight;
+
+    elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) {
+            element.classList.add('visible');
+            if (element.classList.contains('skill-animada')) {
+                element.querySelector('.skill-bar-fill').style.width = element.querySelector('.skill-bar-fill').getAttribute('data-width');
+            }
+        }
+    });
+}
+
+// Executa ao carregar e ao rolar
+window.addEventListener('scroll', checkVisibility);
+window.addEventListener('load', checkVisibility);
+
+// Animação de rolagem suave para os links
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            this.classList.add('active-link');
+            setTimeout(() => this.classList.remove('active-link'), 500);
+
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
 });
