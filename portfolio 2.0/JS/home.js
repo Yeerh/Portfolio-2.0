@@ -160,10 +160,8 @@ document.querySelectorAll(".skill-card").forEach(card => {
     });
 });
 
-// =========================
-// Scroll suave nos links do nav
-// =========================
-document.querySelectorAll("nav a").forEach(link => {
+// Scroll suave só nos links do nav que não são o botão de contato
+document.querySelectorAll("nav a:not(.btn-contato)").forEach(link => {
     link.addEventListener("click", e => {
         e.preventDefault();
         const target = document.querySelector(link.getAttribute("href"));
@@ -276,4 +274,10 @@ document.querySelectorAll('.nav-link').forEach(link => {
             });
         }
     });
+});
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('nav ul');
+
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('show');
 });

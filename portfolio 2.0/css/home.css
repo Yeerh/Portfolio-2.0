@@ -11,7 +11,10 @@ body {
     line-height: 1.7;
     overflow-x: hidden;
 }
-
+.about-text {
+    color:#ffffff;
+    font-size: 1.1rem;
+}
 img {
     max-width: 100%;
     display: block;
@@ -94,6 +97,18 @@ nav ul li a:hover::after {
     display: flex;
     align-items: center;
     gap: 20px;
+}
+.lang-menu {
+    display: none;
+    position: absolute;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    padding: 6px;
+}
+
+.lang-menu.show {
+    display: block;
 }
 
 .lang-dropdown {
@@ -594,3 +609,180 @@ footer {
     margin-bottom: 15px;
     color: #1d4ed8;
 }
+/* ========================= Header & Nav Responsivo ========================= */
+
+/* Header fixo e fundo */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: linear-gradient(135deg, #0e2547, #16368b);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px);
+}
+
+/* Nav container */
+nav {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 12px clamp(12px, 2vw, 30px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* permite quebrar itens se necessário */
+}
+
+/* Logo */
+.logo h3 {
+    font-size: clamp(1.3rem, 2vw, 1.5rem);
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #1d4ed8;
+}
+
+/* Menu principal */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: clamp(12px, 2vw, 25px);
+    margin-left: 0; /* remove margem fixa */
+    flex-wrap: wrap;
+}
+
+/* Links do menu */
+nav ul li a {
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+    font-size: clamp(.9rem, .3vw + .8rem, 1rem);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: #2563eb;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Header right (botões + dropdown) */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: clamp(8px, 2vw, 20px);
+}
+
+/* Dropdown idiomas */
+.lang-dropdown {
+    position: relative;
+}
+
+.lang-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.lang-btn img {
+    width: 24px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.lang-btn:hover img {
+    transform: rotate(10deg);
+}
+
+/* Menu dropdown */
+.lang-menu {
+    display: none;
+    position: absolute;
+    top: 36px;
+    right: 0;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    animation: fadeIn 0.2s ease;
+    z-index: 1000;
+}
+
+/* Mostrar dropdown no hover ou foco (desktop + mobile touch) */
+.lang-dropdown:hover .lang-menu,
+.lang-dropdown:focus-within .lang-menu {
+    display: block;
+}
+
+.lang-menu .lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 15px;
+    width: 130px;
+    transition: background 0.3s ease;
+}
+
+.lang-menu .lang-btn:hover {
+    background-color: #f3f4f6;
+}
+
+.lang-menu .lang-btn.active {
+    background-color: #1d4ed8;
+    color: #fff;
+}
+
+/* ========================= Mobile Menu ========================= */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+        display: none; /* inicial escondido, será aberto com JS */
+    }
+
+    nav ul.show {
+        display: flex; /* classe 'show' abre o menu */
+    }
+
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* Botão de menu mobile */
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-size: 1.3rem;
+        background: none;
+        border: none;
+        color: #ffffff;
+    }
+}
+
+/* ========================= Animação fadeIn ========================= */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
