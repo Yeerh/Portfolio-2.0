@@ -1,259 +1,190 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - Diego</title>
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <meta charset="UTF-8" />
+  <meta name="width=device-width, initial-scale=1.0"/>
+  <title>Diego Ewerton | Desenvolvedor Full Stack</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"/>
+
+  <!-- CSS com fundo azul + linhas + quadrados -->
+  <link rel="stylesheet" href="css/home.css"/>
 </head>
 <body>
-    <header>
-        <nav>
-            <!-- Logo no canto esquerdo -->
-            <div class="logo">
-                
-            </div>
-            <ul>
-                <li><a href="#sobre" class="nav-link">Sobre</a></li>
-                <li><a href="#stack" class="nav-link">Habilidades</a></li>
-                <li><a href="#projetos" class="nav-link">Projetos</a></li>
-            </ul>
-            <!-- Área direita -->
-            <div class="header-right">
-                <div class="lang-dropdown">
-                    <button class="lang-btn active" title="Idioma Atual">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="PT" class="flag">
-                    </button>
-                    <div class="lang-menu">
-                        <button class="lang-btn" data-lang="pt" title="Português">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="PT" class="flag"> Brazil
-                        </button>
-                        <button class="lang-btn" data-lang="en" title="English">
-                            <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="EN" class="flag"> English
-                        </button>
-                    </div>
-                </div>
-                <!-- Botão Entre em Contato -->
-                <a href="https://w.app/khr7xr" class="btn-contato" target="_blank">Entre em Contato</a>
-            </div>
-        </nav>
-    </header>
-  <!-- Seção Sobre -->
-  <section id="sobre" style="text-align: center;">
-    <img src="images/picofme (1).png" alt="Foto de Diego Ewerton" class="profile-photo" style="width:150px; height:auto;">
-    <h2 data-i18n="about_title"><span class="name-highlight">Olá, eu sou Diego Ewerton</span></h2>
-    <h3 data-i18n="about_subtext">
-      Apaixonado pela criação de soluções inovadoras,<br> 
-      com 1 ano de experiência especializado em tecnologias modernas e sistemas personalizados.
-    </h3>
 
-    <!-- Botões -->
-    <div class="btn-container" style="justify-content: center;">
-      <a href="#projetos" class="btn scroll-link" data-i18n="btn_work">Ver meu Trabalho</a>
-      <a href="https://www.linkedin.com/in/diego-ewerton-2063272a0" target="_blank" class="btn">
-        <i class="fab fa-linkedin"></i> 
-      </a>
-      <a href="https://github.com/Yeerh" target="_blank" class="btn">
-        <i class="fab fa-github"></i> 
-      </a>
-    </div>
-  </section>
-
-  <section id="jornada">
-    <h2 data-i18n="journey_title">Minha Jornada</h2>
-    <div class="jornada-container">
-      <!-- Lado Esquerdo -->
-      <div class="jornada-texto">
-        <p data-i18n="journey_text1">
-          Sou um desenvolvedor Front End com 1 ano de experiência,<br> apaixonado por criar soluções inovadoras e eficientes. 
-          Minha jornada começou com o desejo de transformar ideias em realidade através da programação. Ao longo do tempo, desenvolvi habilidades sólidas em HTML, CSS e JavaScript, além de frameworks modernos como React e Vue.js.
-        </p>
-        <p data-i18n="journey_text2">
-          Estou sempre em busca de aprender novas tecnologias e aprimorar minhas habilidades para entregar soluções completas e profissionais.
-        </p>
+  <!-- ========================================
+       HEADER FIXO
+  ======================================== -->
+  <header>
+    <nav>
+      <div class="logo">
+        <h3>Diego<span class="highlight">.dev</span></h3>
       </div>
-
-      <!-- Lado Direito -->
-      <div class="jornada-cards">
-        <div class="card-experiencia">
-          <h3 data-i18n="experience_years">1+ Ano</h3>
-          <p data-i18n="experience_text">De experiência em Front-End e Back-End</p>
-        </div>
-        <div class="card-trabalho">
-          <h3 data-i18n="job_place">🌐 Prefeitura de Paulista</h3>
-          <p data-i18n="job_text">Atuei no desenvolvimento de sistemas modernos e acessíveis.</p>
+      <ul class="nav-links">
+        <li><a href="#sobre" class="nav-link">Sobre</a></li>
+        <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+        <li><a href="#projetos" class="nav-link">Projetos</a></li>
+        <li><a href="#certificados" class="nav-link">Certificados</a></li>
+      </ul>
+      <div class="header-right">
+        <div class="lang-dropdown">
+          <button class="lang-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="PT" class="flag"/>
+          </button>
+          <div class="lang-menu">
+            <button data-lang="pt">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="PT" class="flag"/> Português
+            </button>
+            <button data-lang="en">
+              <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="EN" class="flag"/> English
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-<br>
-<h2>Habilidades & Tecnologias</h2>
-<section id="stack" aria-label="Tecnologias e Habilidades" style="text-align: center;">
-  <div class="col">
-    <h3 data-i18n="stack_tech_title">Tecnologias</h3>
-    <div class="skills-container">
-      <div class="skill-card tech-card">
-        <i class="devicon-nodejs-plain colored"></i>
-        <span>Node.js</span>
-      </div>
-      <div class="skill-card tech-card">
-        <i class="devicon-docker-plain colored"></i>
-        <span>Docker</span>
-      </div>
-      <div class="skill-card tech-card">
-        <i class="devicon-express-original colored"></i>
-        <span>Express.js</span>
-      </div>
-      <div class="skill-card tech-card">
-        <i class="devicon-git-plain colored"></i>
-        <span>Git</span>
-      </div>
-      <div class="skill-card tech-card">
-        <i class="fab fa-github"></i>
-        <span>GitHub Actions</span>
-      </div>
-      <div class="skill-card tech-card">
-        <i class="fab fa-linux"></i>
-        <span>Linux</span>
-      </div>
-      <div class="skill-card tech-card">
-        <i class="devicon-javascript-plain colored"></i>
-        <span>JavaScript</span>
-      </div>
-      <div class="skill-card tech-card">
-        <i class="devicon-html5-plain colored"></i>
-        <span>HTML</span>
-      </div>
-      <div class="skill-card tech-card">
-        <i class="devicon-css3-plain colored"></i>
-        <span>CSS</span>
-      </div>
-      <div class="skill-card tech-card">
-        <i class="devicon-mysql-plain colored"></i>
-        <span>MySQL</span>
-      </div>
-      <div class="skill-card tech-card">
-        <i class="devicon-java-plain colored"></i>
-        <span>Java</span>
-      </div>
-      <div class="skill-card tech-card">
-        <i class="fab fa-figma"></i>
-        <span>Figma</span>
-      </div>
-    </div>
-  </div>
-<br>
-  <div class="col">
-    <h3 data-i18n="stack_skills_title">Habilidades</h3>
-    <div class="skills-container">
-      <div class="skill-card soft-skill">
-        <i class="fas fa-users"></i>
-        <span>Teamwork</span>
-      </div>
-      <div class="skill-card soft-skill">
-        <i class="fas fa-comments"></i>
-        <span>Communication</span>
-      </div>
-      <div class="skill-card soft-skill">
-        <i class="fas fa-sync-alt"></i>
-        <span>Adaptação</span>
-      </div>
-      <div class="skill-card soft-skill">
-        <i class="fas fa-lightbulb"></i>
-        <span>Creativity</span>
-      </div>
-      <div class="skill-card soft-skill">
-        <i class="fas fa-calendar-check"></i>
-        <span>Planning</span>
-      </div>
-      <div class="skill-card soft-skill">
-        <i class="fas fa-tasks"></i>
-        <span>Project Management</span>
-      </div>
-    </div>
-  </div>
-</section>
-<h2>Nível de Habilidade</h2>
-<section id="skills-animadas" style="text-align: center;">
-  <div class="skills-animadas-container">
-    <div class="skill-animada">
-      <span>HTML</span>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" data-width="90%"></div>
-      </div>
-    </div>
-    <div class="skill-animada">
-      <span>CSS</span>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" data-width="85%"></div>
-      </div>
-    </div>
-    <div class="skill-animada">
-      <span>JavaScript</span>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" data-width="80%"></div>
-      </div>
-    </div>
-    <div class="skill-animada">
-      <span>React</span>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" data-width="75%"></div>
-      </div>
-    </div>
-    <div class="skill-animada">
-      <span>Node.js</span>
-      <div class="skill-bar">
-        <div class="skill-bar-fill" data-width="70%"></div>
-      </div>
-    </div>
-  </div>
-</section>
-<h2>Certificados</h2>
-<section id="certificados" style="text-align: center;">
-  <div class="certificados-container">
-    <div class="certificado-card">
-      <img src="images/certificado1.png" alt="Certificado 1">
-      <h3>Curso de Java</h3>
-      <p>Emitido por Udemy - 2024</p>
-    </div>
-    <div class="certificado-card">
-      <img src="images/certificado2.png" alt="Certificado 2">
-      <h3>Curso de HTML E CSS</h3>
-      <p>Emitido por Udemy</p>
-    </div>
-  </div>
-</section>
+    </nav>
+  </header>
 
-<!-- Seção para exibir informações -->
-  <!-- Seção Projetos -->
-  <h2 data-i18n="menu_projects">Projetos</h2>
-  <section id="projetos" style="text-align: center;">
-    <div class="projetos-container" style="justify-content: center;">
-      <div class="projeto-card">
-        <img src="images/image.png" alt="Projeto 1 - Meu Primeiro Portfólio">
-        <h3>Portfolio</h3>
-        <p>Primeiro Portfolio desenvolvido
-          usando linguagens como HTML, CSS e JavaScript, com foco em acessibilidade e responsividade.</p>
-        <a href="https://unrivaled-melomakarona-80b55c.netlify.app/" class="btn scroll-link" target="_blank">Ver mais</a>
+  <!-- ========================================
+       SOBRE MIM (agora com o fundo azul lindo que você queria)
+  ======================================== -->
+  <section id="sobre" class="hero-section">
+    <div class="about-container">
+      <div class="profile-info">
+        <img src="images/picofme (1).png" alt="Diego Ewerton" class="profile-photo"/>
+        <h1>Diego Ewerton</h1>
+        <p class="subtitle">Desenvolvedor Full Stack</p>
+
+        <div class="social-buttons">
+          <a href="https://linkedin.com/in/diego-ewerton-2063272a0" target="_blank" class="btn-icon">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/Yeerh" target="_blank" class="btn-icon">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://w.app/khr7xr" target="_blank" class="btn-icon whatsapp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
       </div>
-      <div class="projeto-card">
-        <img src="images/reca.png" alt="Projeto 2 - Meu Segundo Portfólio">
-        <h3>Sistema de Recadastramento Prefeitura</h3>
-        <p>Projeto focado em Solução para organização e ajudar secretarias
-          buscando a facilidade de uso.</p><br>
-        <a href="#projetos" class="btn scroll-link">Ver mais</a>
+
+      <div class="about-text">
+        <h2 data-i18n="about_title">Olá, eu sou <span class="highlight">Diego Ewerton</span></h2>
+        <p data-i18n="about_subtext">
+          Apaixonado por criar soluções modernas, funcionais e escaláveis com código limpo.<br>
+          Com 1+ ano de experiência em desenvolvimento Front-End, Back-End e sistemas personalizados para prefeituras e empresas.
+        </p>
+        <a href="#habilidades" class="btn-primary">Ver minhas habilidades</a>
       </div>
     </div>
   </section>
-  <script src="js/home.js" defer></script>
-  <!-- Rodapé -->
+
+  <!-- ========================================
+       HABILIDADES
+  ======================================== -->
+  <section id="habilidades" class="section">
+    <h2>Habilidades & Tecnologias</h2>
+    <div class="skills-container">
+      <div class="skill-card"><i class="devicon-html5-plain colored"></i><span>HTML</span></div>
+      <div class="skill-card"><i class="devicon-css3-plain colored"></i><span>CSS</span></div>
+      <div class="skill-card"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+      <div class="skill-card"><i class="devicon-react-original colored"></i><span>React</span></div>
+      <div class="skill-card"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+      <div class="skill-card"><i class="devicon-express-original"></i><span>Express</span></div>
+      <div class="skill-card"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+      <div class="skill-card"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+      <div class="skill-card"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+    </div>
+
+    <div class="progress-bars">
+      <div class="progress-item"><span>HTML / CSS</span><div class="bar"><div class="fill" data-width="90"></div></div></div>
+      <div class="progress-item"><span>JavaScript</span><div class="bar"><div class="fill" data-width="80"></div></div></div>
+      <div class="progress-item"><span>React</span><div class="bar"><div class="fill" data-width="75"></div></div></div>
+      <div class="progress-item"><span>Node.js</span><div class="bar"><div class="fill" data-width="70"></div></div></div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       PROJETOS
+  ======================================== -->
+  <section id="projetos" class="section">
+    <h2>Projetos em Destaque</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="video-wrapper">
+          <video controls poster="images/reca.png">
+            <source src="images/recadastramento.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo.
+          </video>
+        </div>
+        <div class="project-info">
+          <h3>Sistema de Recadastramento</h3>
+          <p>Plataforma oficial da Prefeitura de Paulista.</p>
+          <a href="https://recadastramento.paulista.pe.gov.br" target="_blank" class="btn-primary">Acessar</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="video-wrapper">
+          <video controls poster="images/rastro.png">
+            <source src="images/rastromoville.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo.
+          </video>
+        </div>
+        <div class="project-info">
+          <h3>Rastromoville</h3>
+          <p>Sistema de rastreamento de frota em tempo real.</p>
+          <a href="https://rastromoville.vercel.app" target="_blank" class="btn-primary">Acessar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       CERTIFICADOS
+  ======================================== -->
+  <section id="certificados" class="section">
+    <h2>Certificados</h2>
+    <div class="certs-grid">
+      <div class="cert-card">
+        <img src="images/certificado1.png" alt="Java"/>
+        <h4>Java Completo</h4>
+        <p>Udemy • 2024</p>
+      </div>
+      <div class="cert-card">
+        <img src="images/certificado2.png" alt="HTML & CSS"/>
+        <h4>HTML5 & CSS3</h4>
+        <p>Udemy • 2024</p>
+      </div>
+      <div class="cert-card">
+        <img src="images/CG-E5C544F7.png" alt="Java Avançado"/>
+        <h4>Java Avançado</h4>
+        <p>Geek University • 2024</p>
+      </div>
+      <div class="cert-card">
+        <img src="images/TCBAQ1RN.webp" alt="Git"/>
+        <h4>Git e GitHub</h4>
+        <p>DIO • 2025</p>
+      </div>
+      <div class="cert-card">
+        <img src="images/Gestao.png" alt="Gamificação"/>
+        <h4>Gamificação</h4>
+        <p>Unibra • 2025</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       FOOTER
+  ======================================== -->
   <footer>
-    <p>&copy; 2025 - Criado por Diego Ewerton</p>
+    <p>© 2025 Diego Ewerton • Feito com <i class="fas fa-heart"></i> e muito café</p>
   </footer>
+
+  <script src="JS/home.js"></script>
 </body>
 </html>

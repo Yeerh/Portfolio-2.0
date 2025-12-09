@@ -1,788 +1,405 @@
-/* ========================= Reset e fontes ========================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ========================================
+   PORTFÓLIO DIEGO EWERTON – VERSÃO FINAL DEFINITIVA 2025
+   Fundo #0F172A + tudo perfeito em qualquer tela
+======================================== */
+
+:root {
+  --primary: #6084E4;
+  --primary-dark: #4a6bc7;
+  --bg: #0F172A;
+  --card-bg: rgba(255, 255, 255, 0.07);
+  --card-border: rgba(255, 255,255, 0.12);
+  --text: #e2e8f0;
+  --text-light: #94a3b8;
 }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
-    font-family: 'Oswald', sans-serif;
-    background: linear-gradient(135deg, #0e2547, #16368b); /* Gradiente sutil */
-    line-height: 1.7;
-    overflow-x: hidden;
-}
-.about-text {
-    color:#ffffff;
-    font-size: 1.1rem;
-}
-img {
-    max-width: 100%;
-    display: block;
-    align-items: center;
-}
-h3{
-color:#ffffff;
-
-}
-    
-
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: color 0.3s ease;
+  font-family: 'Oswald', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-/* ========================= Header & Nav ========================= */
+/* ======================================== HEADER FIXO */
 header {
-    color: #ffffff;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: linear-gradient(135deg, #0e2547, #16368b); /* Gradiente sutil */
-    z-index: 999;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px); /* Efeito de vidro */
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(15, 23, 42, 0.98);
+  backdrop-filter: blur(15px);
+  z-index: 1000;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 15px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .logo h3 {
-    color: #1d4ed8;
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 1px;
+  color: var(--primary);
+  font-size: clamp(1.8rem, 6vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
-nav ul {
-    margin-left: 13%;
-    display: flex;
-    gap: 25px;
-    list-style: none;
+.nav-links {
+  display: flex;
+  gap: clamp(1.2rem, 5vw, 3rem);
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-nav ul li a {
-    font-weight: 500;
-    position: relative;
-    padding: 5px 0;
+.nav-link {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: clamp(1rem, 3.5vw, 1.2rem);
+  position: relative;
+  white-space: nowrap;
+  transition: color 0.3s;
 }
 
-nav ul li a:hover {
-    color: #2563eb;
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -8px;
+  left: 0;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary);
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
 }
 
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background: #2563eb;
-    transition: width 0.3s ease;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
-}
-
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-.lang-menu {
-    display: none;
-    position: absolute;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    padding: 6px;
-}
-
-.lang-menu.show {
-    display: block;
-}
-
+/* ======================================== BOTÃO DE IDIOMA – PERFEITO */
 .lang-dropdown {
-    position: relative;
-}
-
-.lang-dropdown .lang-btn {
-    border: none;
-    background: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.lang-dropdown .lang-btn img {
-    width: 24px;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-.lang-dropdown .lang-btn:hover img {
-    transform: rotate(10deg);
-}
-
-.lang-menu {
-    display: none;
-    position: absolute;
-    top: 35px;
-    right: 0;
-    background: #fff;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 0.2s ease;
-}
-
-.lang-dropdown:hover .lang-menu {
-    display: block;
-}
-
-.lang-menu .lang-btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 15px;
-    width: 130px;
-    transition: background 0.3s ease;
-}
-
-.lang-menu .lang-btn:hover {
-    background-color: #f3f4f6;
-}
-
-.lang-menu .lang-btn.active {
-    background-color: #1d4ed8;
-    color: #fff;
-}
-
-/* ========================= Botões ========================= */
-.btn, .btn-contato, .scroll-link {
-    display: inline-block;
-    padding: 10px 20px;
-    background: linear-gradient(90deg, #1d4ed8, #2563eb);
-    color: #fff;
-    border-radius: 8px;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn:hover, .btn-contato:hover {
-    background: linear-gradient(90deg, #2563eb, #1e40af);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(29, 78, 216, 0.3);
-}
-
-/* ========================= Seções ========================= */
-section {
-    padding: 120px 20px 80px;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
-
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-h2 {
-    color: #ffffff;
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    position: relative;
-}
-
-h2::after {
-    content: '';
-    position: absolute;
-    width: 50px;
-    height: 3px;
-    background: #1d4ed8;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: width 0.3s ease;
-}
-
-/* ========================= Perfil ========================= */
-.profile-photo {
-    border-radius: 50%;
-    width: 180px;
-    height: auto;
-    margin-bottom: 20px;
-    border: 4px solid #e5e7eb;
-    transition: transform 0.3s ease;
-}
-
-.profile-photo:hover {
-    transform: scale(1.05);
-}
-
-.name-highlight {
-    color: #ffffff;
-    font-size: 1.8rem;
-    font-weight: 700;
-}
-
-/* ========================= Jornada Cards ========================= */
-.jornada-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.jornada-texto {
-    flex: 1;
-    min-width: 300px;
-    max-width: 600px;
-    font-size: 1.2rem;
-    line-height: 1.9;
-    color: #475569;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-}
-
-.jornada-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.jornada-cards .card-experiencia, .jornada-cards .card-trabalho {
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease-out;
-    border-left: 4px solid #1d4ed8;
-}
-
-.jornada-cards .show-card {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.jornada-cards h3 {
-    color: #1d4ed8;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-}
-
-/* ========================= Skills Cards ========================= */
-.skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    justify-content: center;
-}
-
-.skill-card {
-    background: #fff;
-    padding: 25px;
-    border-radius: 15px;
-    width: 180px;
-    height: 140px;
-    text-align: center;
-    cursor: pointer;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.skill-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(29, 78, 216, 0.1), transparent);
-    animation: shine 3s infinite;
-}
-
-@keyframes shine {
-    0% { left: -100%; }
-    20% { left: 100%; }
-    100% { left: 100%; }
-}
-
-.skill-card span {
-    margin-top: 10px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #1d4ed8;
-}
-
-.skill-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-}
-
-/* ========================= Skills animadas ========================= */
-.skills-animadas-container {
-    max-width: 800px;
-    margin: 0 auto;
-    gap: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.skill-animada {
-    margin-bottom: 20px;
-}
-
-.skill-animada span {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #ffffff;
-    font-size: 1.1rem;
-}
-
-.skill-bar {
-    background: #e5e7eb;
-    height: 20px;
-    border-radius: 15px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.skill-bar-fill {
-    width: 0;
-    height: 100%;
-    background: linear-gradient(90deg, #1d4ed8, #2563eb);
-    border-radius: 15px;
-    transition: width 1.5s ease-out;
-}
-
-.skill-animada.visible .skill-bar-fill {
-    width: attr(data-width);
-}
-
-/* ========================= Skills Section ========================= */
-#stack {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap;
-    margin-top: 40px;
-    padding: 20px 0;
-}
-
-#stack .col {
-    flex: 1;
-    min-width: 300px;
-}
-
-#stack h3 {
-    margin-bottom: 25px;
-    font-size: 1.8rem;
-    color: #ffffff;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-@media screen and (max-width: 768px) {
-    #stack {
-        flex-direction: column;
-        gap: 40px;
-    }
-    #stack .col {
-        width: 100%;
-    }
-}
-
-/* ========================= Certificados ========================= */
-.certificados-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    justify-content: center;
-}
-
-.certificado-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    width: 360px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.certificado-card:hover {
-    transform: translateY(-5px);
-}
-
-.certificado-card img {
-    border-radius: 8px;
-    margin-bottom: 12px;
-    transition: transform 0.3s ease;
-}
-
-.certificado-card:hover img {
-    transform: scale(1.02);
-}
-
-/* ========================= Popup de Skill ========================= */
-.skill-popup {
-    position: absolute;
-    background: #1d4ed8;
-    color: #fff;
-    padding: 12px 16px;
-    border-radius: 10px;
-    font-size: 0.95rem;
-    pointer-events: none;
-    z-index: 999;
-    white-space: nowrap;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 0.2s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* ========================= Projetos Cards ========================= */
-.projetos-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-}
-
-.projeto-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    width: 600px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease-out;
-}
-
-.projeto-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.projeto-card h3 {
-    color: #0b0d11;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.projeto-card p {
-    color: #000000;
-    margin-bottom: 15px;
-}
-
-/* ========================= Footer ========================= */
-footer {
-    text-align: center;
-    padding: 25px;
-    background: linear-gradient(135deg, #0e2547, #16368b); /* Gradiente sutil */
-    color: #fff;
-    margin-top: 50px;
-    border-radius: 10px 10px 0 0;
-    font-size: 1.1rem;
-}
-
-/* ========================= Responsividade ========================= */
-@media screen and (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        padding: 15px;
-    }
-
-    nav ul {
-        margin: 10px 0 0;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .header-right {
-        margin-top: 10px;
-    }
-
-    section {
-        padding: 100px 15px 60px;
-    }
-
-    .jornada-container {
-        flex-direction: column;
-    }
-
-    .jornada-cards {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .projeto-card {
-        width: 100%;
-    }
-
-    #stack {
-        padding: 15px 0;
-    }
-}
-
-/* Seção Sobre */
-#sobre {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding-top: 130px;
-}
-
-#sobre .profile-photo {
-    width: 180px;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 15px;
-    border: 5px solid #e5e7eb;
-    transition: transform 0.3s ease;
-}
-
-#sobre .profile-photo:hover {
-    transform: scale(1.1);
-}
-
-.jornada-texto {
-    flex: 1;
-    min-width: 300px;
-    max-width: 600px;
-    font-size: 1.3rem;
-    line-height: 2;
-    color: #000000;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-.jornada-cards .card-experiencia, .jornada-cards .card-trabalho {
-    padding: 35px;
-    border-left: 5px solid #1d4ed8;
-}
-
-.jornada-cards .card-icon {
-    font-size: 3.5rem;
-    margin-bottom: 15px;
-    color: #1d4ed8;
-}
-/* ========================= Header & Nav Responsivo ========================= */
-
-/* Header fixo e fundo */
-header {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    background: linear-gradient(135deg, #0e2547, #16368b);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    backdrop-filter: blur(5px);
-}
-
-/* Nav container */
-nav {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 12px clamp(12px, 2vw, 30px);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap; /* permite quebrar itens se necessário */
-}
-
-/* Logo */
-.logo h3 {
-    font-size: clamp(1.3rem, 2vw, 1.5rem);
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: #1d4ed8;
-}
-
-/* Menu principal */
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: clamp(12px, 2vw, 25px);
-    margin-left: 0; /* remove margem fixa */
-    flex-wrap: wrap;
-}
-
-/* Links do menu */
-nav ul li a {
-    font-weight: 500;
-    position: relative;
-    padding: 5px 0;
-    font-size: clamp(.9rem, .3vw + .8rem, 1rem);
-}
-
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background: #2563eb;
-    transition: width 0.3s ease;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
-}
-
-/* Header right (botões + dropdown) */
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: clamp(8px, 2vw, 20px);
-}
-
-/* Dropdown idiomas */
-.lang-dropdown {
-    position: relative;
+  position: relative;
+  z-index: 1001;
 }
 
 .lang-btn {
-    border: none;
-    background: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
 
-.lang-btn img {
-    width: 24px;
-    height: auto;
-    transition: transform 0.3s ease;
+.lang-btn:hover {
+  background: rgba(96, 132, 228, 0.15);
+  border-color: var(--primary);
+  transform: scale(1.08);
+  box-shadow: 0 12px 30px rgba(96, 132, 228, 0.4);
 }
 
-.lang-btn:hover img {
-    transform: rotate(10deg);
+.lang-btn .flag {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: all 0.3s ease;
 }
 
-/* Menu dropdown */
+.lang-btn:hover .flag {
+  transform: scale(1.1);
+}
+
 .lang-menu {
-    display: none;
-    position: absolute;
-    top: 36px;
-    right: 0;
-    background: #fff;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    animation: fadeIn 0.2s ease;
-    z-index: 1000;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  background: rgba(30, 41, 59, 0.98);
+  border: 1px solid rgba(96, 132, 228, 0.3);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px);
+  transition: all 0.3s ease;
+  ease;
+  backdrop-filter: blur(20px);
+  min-width: 190px;
 }
 
-/* Mostrar dropdown no hover ou foco (desktop + mobile touch) */
-.lang-dropdown:hover .lang-menu,
-.lang-dropdown:focus-within .lang-menu {
-    display: block;
+.lang-dropdown:hover .lang-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
-.lang-menu .lang-btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 15px;
-    width: 130px;
-    transition: background 0.3s ease;
+.lang-menu button {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 24px;
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
-.lang-menu .lang-btn:hover {
-    background-color: #f3f4f6;
+.lang-menu button:hover {
+  background: var(--primary);
+  color: white;
+  padding-left: 30px;
 }
 
-.lang-menu .lang-btn.active {
-    background-color: #1d4ed8;
-    color: #fff;
+.lang-menu button .flag {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 
-/* ========================= Mobile Menu ========================= */
+/* Mobile idioma */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav ul {
-        flex-direction: column;
-        width: 100%;
-        gap: 12px;
-        display: none; /* inicial escondido, será aberto com JS */
-    }
-
-    nav ul.show {
-        display: flex; /* classe 'show' abre o menu */
-    }
-
-    .header-right {
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    /* Botão de menu mobile */
-    .menu-toggle {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        font-size: 1.3rem;
-        background: none;
-        border: none;
-        color: #ffffff;
-    }
+  .lang-btn { width: 52px; height: 52px; }
+  .lang-btn .flag { width: 32px; height: 32px; }
+  .lang-menu { top: 65px; right: -20px; }
 }
 
-/* ========================= Animação fadeIn ========================= */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
+/* ======================================== HERO (SOBRE) */
+#sobre {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(130px, 20vh, 200px) 1.5rem clamp(100px, 15vh, 150px);
 }
 
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(2.5rem, 8vw, 5rem);
+}
+
+.profile-photo {
+  width: clamp(200px, 45vw, 300px);
+  height: clamp(200px, 45vw, 300px);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 8px solid var(--primary);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.7);
+  transition: all 0.4s ease;
+}
+.profile-photo:hover { transform: scale(1.08); }
+
+#sobre h1 {
+  font-size: clamp(3.2rem, 10vw, 6rem);
+  font-weight: 700;
+  color: white;
+  margin: 1.5rem 0 0.8rem;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+  color: var(--primary);
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+}
+
+.about-text {
+  max-width: 800px;
+  font-size: clamp(1.1rem, 4.5vw, 1.4rem);
+  color: var(--text-light);
+  margin-bottom: 3rem;
+  line-height: 1.8;
+  padding: 0 1rem;
+}
+
+.social-buttons {
+  display: flex;
+  gap: clamp(1.8rem, 6vw, 3rem);
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+.btn-icon {
+  width: clamp(70px, 18vw, 90px);
+  height: clamp(70px, 18vw, 90px);
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: clamp(2rem, 7vw, 3rem);
+  color: white;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(15px);
+}
+.btn-icon:hover { background: var(--primary); transform: translateY(-15px); box-shadow: 0 25px 50px rgba(96,132,228,0.5); }
+.btn-icon.whatsapp:hover { background: #25D366; }
+
+.btn-primary {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: clamp(16px, 5vw, 20px) clamp(40px, 10vw, 60px);
+  border-radius: 60px;
+  font-weight: 600;
+  font-size: clamp(1.1rem, 4vw, 1.3rem);
+  text-decoration: none;
+  transition: all 0.4s;
+  box-shadow: 0 15px 40px rgba(96,132,228,0.5);
+}
+.btn-primary:hover { background: white; color: var(--primary-dark); transform: translateY(-8px); }
+
+/* ======================================== SEÇÕES */
+.section {
+  padding: clamp(100px, 18vh, 160px) 1.5rem;
+  text-align: center;
+}
+.section h2 {
+  font-size: clamp(2.8rem, 9vw, 4.5rem);
+  color: white;
+  margin-bottom: 5rem;
+  position: relative;
+}
+.section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(100px, 25vw, 150px);
+  height: 6px;
+  background: var(--primary);
+  border-radius: 3px;
+}
+
+/* Habilidades */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr));
+  gap: clamp(2.5rem, 7vw, 4rem);
+  max-width: 1200px;
+  margin: 0 auto 6rem;
+  justify-items: center;
+}
+.skill-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 2.5rem;
+  border-radius: 28px;
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s;
+  backdrop-filter: blur(15px);
+}
+.skill-card:hover { transform: translateY(-18px); border-color: var(--primary); box-shadow: 0 30px 60px rgba(96,132,228,0.3); }
+.skill-card i { font-size: clamp(3rem, 10vw, 4.5rem); margin-bottom: 1rem; }
+.skill-card span { color: var(--primary); font-weight: 600; font-size: clamp(1rem, 3.5vw, 1.3rem); }
+
+/* Barras de progresso */
+.progress-bars { max-width: 900px; margin: 0 auto; }
+.progress-item { margin-bottom: 3rem; }
+.progress-item span { display: block; margin-bottom: 1rem; color: white; font-size: clamp(1.2rem, 4vw, 1.4rem); font-weight: 500; }
+.bar { background: rgba(255,255,255,0.12); height: 22px; border-radius: 11px; overflow: hidden; box-shadow: inset 0 3px 10px rgba(0,0,0,0.4); }
+.fill { height: 100%; background: var(--primary); width: 0; border-radius: 11px; transition: width 2.2s ease-out; }
+
+/* ======================================== PROJETOS – VÍDEOS LARGOS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(3.5rem, 10vw, 5rem);
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+@media (min-width: 1024px) {
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 32px;
+  overflow: hidden;
+  transition: all 0.4s;
+  backdrop-filter: blur(15px);
+}
+.project-card:hover { transform: translateY(-20px); box-shadow: 0 35px 70px rgba(96,132,228,0.35); }
+.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; background: #000; }
+.video-wrapper video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+.project-info { padding: clamp(2rem, 6vw, 3rem); text-align: left; }
+.project-info h3 { color: var(--primary); font-size: clamp(1.7rem, 5vw, 2.2rem); margin-bottom: 1.2rem; }
+.project-info p { color: var(--text-light); margin-bottom: 2rem; font-size: clamp(1.1rem, 3.5vw, 1.3rem); line-height: 1.7; }
+
+/* ======================================== CERTIFICADOS – BEM LARGOS */
+.certs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(3rem, 8vw, 4rem);
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+@media (min-width: 768px) { .certs-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1200px) { .certs-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.cert-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: clamp(2.5rem, 7vw, 3.5rem);
+  border-radius: 32px;
+  text-align: center;
+  transition: all 0.4s;
+  backdrop-filter: blur(15px);
+}
+.cert-card:hover { transform: translateY(-18px); border-color: var(--primary); box-shadow: 0 35px 70px rgba(96,132,228,0.3); }
+.cert-card img { width: 100%; border-radius: 24px; margin-bottom: 1.8rem; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+.cert-card h4 { color: var(--primary); margin: 1.5rem 0 0.8rem; font-size: clamp(1.4rem, 5vw, 1.8rem); }
+.cert-card p { color: var(--text-light); font-size: clamp(1rem, 3.5vw, 1.2rem); }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: clamp(6rem, 15vh, 10rem) 2rem;
+  background: rgba(0,0,0,0.5);
+  color: var(--text-light);
+  font-size: clamp(1.1rem, 4vw, 1.4rem);
+  margin-top: 10rem;
+}
+footer i { color: #e11d48; font-size: 1.6em; }
